@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540">
+  <rect width="900" height="540" rx="32" fill="#091426"/>
+  <circle cx="732" cy="116" r="110" fill="#6af7d8" opacity=".16"/>
+  <path d="M52 390c150-128 324-178 518-152 76 10 150 34 260 90v120H58Z" fill="#0a1220"/>
+  <path d="M132 348c122-42 220-62 324-62 106 0 194 18 318 74-76 16-122 30-200 74-98-32-188-44-304-38-76 4-126 18-206 40Z" fill="#102342"/>
+  <path d="M186 334c102-22 176-30 272-22 62 6 118 18 204 48-54 18-88 32-144 58-96-24-166-28-258-18-46 4-82 12-136 30Z" fill="#8d82ff" opacity=".86"/>
+  <path d="M538 250c52 0 92 34 92 76 0 48-48 82-106 82-58 0-106-34-106-82 0-42 62-76 120-76Z" fill="#6af7d8" opacity=".9"/>
+  <circle cx="516" cy="332" r="16" fill="#091426"/>
+  <circle cx="614" cy="332" r="16" fill="#091426"/>
+  <text x="60" y="470" fill="#eef4ff" font-family="Orbitron, Arial, sans-serif" font-size="58" font-weight="700">VERTEX DRIFTERS</text>
+</svg>

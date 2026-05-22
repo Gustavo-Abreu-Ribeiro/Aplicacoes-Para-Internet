@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161f45"/>
+      <stop offset="55%" stop-color="#0b1330"/>
+      <stop offset="100%" stop-color="#040711"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6af7d8"/>
+      <stop offset="100%" stop-color="#8c82ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" rx="48" fill="url(#bg)"/>
+  <circle cx="170" cy="190" r="150" fill="#6af7d8" opacity=".14"/>
+  <circle cx="760" cy="220" r="180" fill="#ff64d2" opacity=".16"/>
+  <path d="M120 880c80-210 190-372 335-490 103 82 192 170 266 270 36 48 58 92 86 162Z" fill="#0f1b38"/>
+  <path d="M222 874c56-150 132-266 226-360 70 64 128 132 178 212 18 28 34 58 52 148Z" fill="#172956"/>
+  <path d="M312 540c54-68 126-112 204-136-38 74-40 168 22 236-54 14-116 10-164-20-60-36-96-102-62-80Z" fill="#6af7d8" opacity=".8"/>
+  <path d="M338 512c94-12 160 20 210 88-22 32-54 58-92 76-38-54-62-102-118-164Z" fill="#ff64d2" opacity=".76"/>
+  <rect x="102" y="76" width="696" height="28" rx="14" fill="url(#bar)" opacity=".85"/>
+  <text x="100" y="980" fill="#eef4ff" font-family="Orbitron, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="6">SEASON ZERO</text>
+  <text x="104" y="1040" fill="#9db4dc" font-family="Space Grotesk, Arial, sans-serif" font-size="30">Campanha narrativa · Arena competitiva · Colecionáveis premium</text>
+</svg>

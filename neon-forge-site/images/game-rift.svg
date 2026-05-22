@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540">
+  <rect width="900" height="540" rx="32" fill="#08111f"/>
+  <circle cx="180" cy="118" r="132" fill="#ff67d6" opacity=".18"/>
+  <circle cx="760" cy="120" r="94" fill="#8d82ff" opacity=".2"/>
+  <path d="M0 434c180-34 274-56 430-50 166 8 280 26 470 78v78H0Z" fill="#070c15"/>
+  <path d="M186 360 324 196l138 130-164 58Zm246-14 132-176 150 194-136 44Z" fill="#172f58"/>
+  <path d="M228 330 334 206l100 94-120 44Zm236-8 96-128 114 150-104 34Z" fill="#ff67d6" opacity=".82"/>
+  <path d="M352 236 430 170l64 72-72 50Z" fill="#6af7d8" opacity=".9"/>
+  <text x="60" y="470" fill="#eef4ff" font-family="Orbitron, Arial, sans-serif" font-size="60" font-weight="700">RIFT OUTLAWS</text>
+</svg>
