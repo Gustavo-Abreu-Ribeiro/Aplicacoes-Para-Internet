@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dia das Mães | Jardim de Afeto</title>
+  <link rel="preload" as="image" href="images/1.jpg">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <style>
+    :root {
+      --bg-cream: #f6f1eb;
+      --bg-soft: #efe4dc;
+      --rose-dust: #c99797;
+      --rose-deep: #9f6f72;
+      --sage: #9eaa92;
+      --ink: #4f4142;
+      --card: rgba(255, 250, 246, 0.88);
+      --border: rgba(159, 111, 114, 0.18);
+      --shadow: 0 18px 45px rgba(94, 74, 76, 0.12);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(201, 151, 151, 0.18), transparent 32%),
+        linear-gradient(180deg, #fbf7f2 0%, var(--bg-cream) 38%, #f1e7df 100%);
+      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .navbar-brand {
+      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      letter-spacing: 0.02em;
+    }
+
+    .section-title {
+      color: var(--rose-deep);
+      font-weight: 700;
+    }
+
+    .soft-shell {
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar {
+      background: rgba(246, 241, 235, 0.92) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(159, 111, 114, 0.12);
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .dropdown-item {
+      color: var(--ink) !important;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus,
+    .dropdown-item:hover {
+      color: var(--rose-deep) !important;
+    }
+
+    .nav-link.active {
+      color: var(--rose-deep) !important;
+      font-weight: 600;
+    }
+
+    .btn-rose {
+      background-color: var(--rose-deep);
+      border-color: var(--rose-deep);
+      color: #fff;
+    }
+
+    .btn-rose:hover,
+    .btn-rose:focus {
+      background-color: #8c6163;
+      border-color: #8c6163;
+      color: #fff;
+    }
+
+    .btn-outline-rose {
+      border-color: var(--rose-deep);
+      color: var(--rose-deep);
+    }
+
+    .btn-outline-rose:hover,
+    .btn-outline-rose:focus {
+      background-color: var(--rose-deep);
+      border-color: var(--rose-deep);
+      color: #fff;
+    }
+
+    .text-rose {
+      color: var(--rose-deep) !important;
+    }
+
+    .bg-rose-subtle {
+      background-color: rgba(201, 151, 151, 0.14);
+    }
+
+    .bg-sage-subtle {
+      background-color: rgba(158, 170, 146, 0.18);
+    }
+
+    .hero-copy {
+      padding: 3rem;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.05;
+    }
+
+    .hero-copy p {
+      font-size: 1.05rem;
+      max-width: 38rem;
+    }
+
+    .hero-media {
+      min-height: 560px;
+      height: 100%;
+    }
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-item {
+      height: 100%;
+    }
+
+    .carousel-item img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: saturate(0.82) contrast(0.96);
+    }
+
+    .carousel-photo-1 {
+      object-position: center 28%;
+    }
+
+    .carousel-photo-2 {
+      object-position: center 35%;
+    }
+
+    .carousel-photo-3 {
+      object-position: center 24%;
+    }
+
+    .carousel-caption {
+      background: linear-gradient(180deg, transparent, rgba(55, 36, 39, 0.72));
+      inset: auto 0 0 0;
+      padding: 3rem 2rem 2rem;
+    }
+
+    .feature-card,
+    .memory-card,
+    .plan-card,
+    .form-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card .fa-stack,
+    .plan-card .fa-stack {
+      color: var(--rose-deep);
+    }
+
+    .memory-card img {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+    }
+
+    .list-group-item {
+      background: transparent;
+      border-color: rgba(159, 111, 114, 0.14);
+      color: var(--ink);
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: rgba(201, 151, 151, 0.12);
+      color: var(--rose-deep);
+      box-shadow: none;
+    }
+
+    .accordion-button:focus,
+    .form-control:focus,
+    .form-select:focus {
+      border-color: rgba(159, 111, 114, 0.45);
+      box-shadow: 0 0 0 0.25rem rgba(159, 111, 114, 0.15);
+    }
+
+    .nav-pills .nav-link {
+      border-radius: 999px;
+      color: var(--ink) !important;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: var(--rose-deep);
+      color: #fff !important;
+    }
+
+    .preview-card {
+      background: rgba(255, 250, 246, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview-head {
+      background: rgba(201, 151, 151, 0.12);
+      border-bottom: 1px solid rgba(159, 111, 114, 0.14);
+    }
+
+    .preview-paper {
+      background: linear-gradient(180deg, #fffdfb 0%, #f7f0ea 100%);
+      border: 1px solid rgba(159, 111, 114, 0.12);
+      border-radius: 18px;
+    }
+
+    .preview-paper.elegante {
+      border-left: 4px solid #9f6f72;
+    }
+
+    .preview-paper.afetuoso {
+      border-left: 4px solid #c99797;
+    }
+
+    .preview-paper.alegre {
+      border-left: 4px solid #9eaa92;
+    }
+
+    footer {
+      border-top: 1px solid rgba(159, 111, 114, 0.12);
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-copy {
+        padding: 2rem;
+      }
+
+      .hero-media {
+        min-height: 380px;
+      }
+
+      .carousel-item img {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="110" tabindex="0">
+  <nav id="mainNav" class="navbar navbar-expand-lg sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand fw-bold" href="#topo">Jardim de Afeto</a>
+      <div class="d-flex align-items-center gap-2 order-lg-3">
+        <button class="btn btn-rose" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuEspecial"
+          aria-controls="menuEspecial">
+          <i class="fa-solid fa-bars-staggered me-2"></i>Roteiro do dia
+        </button>
+      </div>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#topo">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#momentos">Momentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programacao">Programação</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Inspirações</a>
+            <ul class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" href="#presentes">Presentes</a></li>
+              <li><a class="dropdown-item" href="#mensagem">Mensagem</a></li>
+              <li><a class="dropdown-item" href="#faq">Dúvidas</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input class="form-control border-start-0" type="search" placeholder="Buscar ideias carinhosas"
+              aria-label="Buscar ideias carinhosas">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="menuEspecial" aria-labelledby="menuEspecialLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title text-rose" id="menuEspecialLabel">Roteiro especial</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3">
+      <div class="alert bg-rose-subtle border-0 mb-0" role="alert">
+        <strong>Ideia do dia:</strong> combine um café da manhã simples, uma carta escrita à mão e uma tarde sem pressa.
+      </div>
+      <div class="list-group">
+        <a href="#presentes" class="list-group-item list-group-item-action">Seleção de presentes</a>
+        <a href="#programacao" class="list-group-item list-group-item-action">Programação em família</a>
+        <a href="#mensagem" class="list-group-item list-group-item-action">Montar a carta</a>
+        <a href="#faq" class="list-group-item list-group-item-action">Perguntas frequentes</a>
+      </div>
+      <a class="btn btn-rose mt-auto" href="#mensagem">
+        <i class="fa-regular fa-envelope me-2"></i>Ir para a carta
+      </a>
+    </div>
+  </div>
+
+  <main id="topo" class="py-4 py-lg-5">
+    <div class="container">
+      <section class="soft-shell overflow-hidden mb-4 mb-lg-5">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6 hero-copy">
+            <span class="badge rounded-pill text-bg-light border text-rose px-3 py-2 mb-3">
+              Especial de maio
+            </span>
+            <h1>Um site delicado para celebrar quem faz a casa florescer.</h1>
+            <p class="mt-3 mb-4 text-secondary">
+              Presentes afetivos, cartas personalizadas e pequenos rituais para transformar o Dia das Mães em uma
+              lembrança bonita do começo ao fim.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <a class="btn btn-rose btn-lg" href="#mensagem">Escrever mensagem</a>
+              <a class="btn btn-outline-rose btn-lg" href="#programacao">Ver programação</a>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge rounded-pill text-bg-light border text-rose px-3 py-2">Carta com prévia</span>
+              <span class="badge rounded-pill text-bg-light border text-rose px-3 py-2">Sugestões de presentes</span>
+              <span class="badge rounded-pill text-bg-light border text-rose px-3 py-2">Programação do dia</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div id="carouselMoments" class="carousel slide hero-media" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselMoments" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselMoments" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselMoments" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/1.jpg" class="d-block w-100 carousel-photo-1"
+                    alt="Detalhes delicados para celebrar o Dia das Mães" width="3648" height="5472"
+                    fetchpriority="high" loading="eager" decoding="sync">
+                  <div class="carousel-caption text-start">
+                    <h5>Pequenos gestos, grandes lembranças</h5>
+                    <p class="mb-0">Flores, bilhetes e tempo de qualidade sempre funcionam melhor juntos.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="images/2.jpg" class="d-block w-100 carousel-photo-2"
+                    alt="Encontro em família no Dia das Mães" width="4480" height="6720"
+                    loading="eager" decoding="async">
+                  <div class="carousel-caption text-start">
+                    <h5>Uma mesa posta com calma</h5>
+                    <p class="mb-0">O clima da celebração importa tanto quanto o presente.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="images/3.jpg" class="d-block w-100 carousel-photo-3"
+                    alt="Momento de carinho entre mãe e família" width="3648" height="5472"
+                    loading="eager" decoding="async">
+                  <div class="carousel-caption text-start">
+                    <h5>Memórias que ficam</h5>
+                    <p class="mb-0">Transforme um domingo comum em uma lembrança especial.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselMoments"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselMoments"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alert bg-sage-subtle border-0" role="alert">
+        <strong>Escolha o clima da homenagem:</strong> um presente delicado, uma experiência em família ou uma carta
+        escrita com carinho. A ideia aqui é reunir tudo isso no mesmo lugar.
+      </section>
+
+      <section id="momentos" class="py-4 py-lg-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <p class="text-uppercase small text-secondary mb-1">Momentos em destaque</p>
+            <h2 class="section-title mb-0">Ideias que aquecem o dia inteiro</h2>
+            <p class="text-secondary mb-0 mt-2">Sugestões simples para transformar a data em uma experiência mais
+              pessoal.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card h-100 p-4">
+              <span class="fa-stack fa-2x mb-3">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-mug-saucer fa-stack-1x"></i>
+              </span>
+              <h5>Café da manhã especial</h5>
+              <p class="text-secondary mb-0">Monte uma bandeja delicada com flores, frutas e um bilhete afetuoso.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card h-100 p-4">
+              <span class="fa-stack fa-2x mb-3">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-envelope-open-text fa-stack-1x"></i>
+              </span>
+              <h5>Carta feita com calma</h5>
+              <p class="text-secondary mb-0">Palavras sinceras criam impacto duradouro e custam quase nada.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card h-100 p-4">
+              <span class="fa-stack fa-2x mb-3">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-seedling fa-stack-1x"></i>
+              </span>
+              <h5>Presente com significado</h5>
+              <p class="text-secondary mb-0">Prefira algo útil, bonito e conectado a uma memória compartilhada.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card h-100 p-4">
+              <span class="fa-stack fa-2x mb-3">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-camera-retro fa-stack-1x"></i>
+              </span>
+              <h5>Álbum de lembranças</h5>
+              <p class="text-secondary mb-0">Revise fotos queridas e transforme o encontro em uma pequena exposição.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="presentes" class="py-4 py-lg-5">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8">
+            <h2 class="section-title mb-4">Loja e encomendas especiais</h2>
+            <div class="row g-4">
+              <div class="col-md-6 col-xl-4">
+                <div class="memory-card h-100">
+                  <img src="images/shop-box.jpg" class="w-100" width="900" height="1100"
+                    alt="Caixa de autocuidado para o Dia das Mães">
+                  <div class="p-4">
+                    <span class="badge rounded-pill bg-rose-subtle text-rose mb-3">Produto</span>
+                    <h5>Caixa de autocuidado</h5>
+                    <p class="text-secondary">Uma seleção pronta com vela suave, sabonete perfumado, chás e cartão de
+                      dedicação para acompanhar o presente.</p>
+                    <a href="#caixa-produto" class="btn btn-outline-rose">Ver produto</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="memory-card h-100">
+                  <img src="images/shop-lunch.jpg" class="w-100" width="900" height="1100"
+                    alt="Experiência de almoço em família">
+                  <div class="p-4">
+                    <span class="badge rounded-pill bg-sage-subtle text-success-emphasis mb-3">Experiência</span>
+                    <h5>Almoço em família</h5>
+                    <p class="text-secondary">Uma mesa bem pensada, sem correria, costuma valer mais que o luxo.</p>
+                    <a href="#programacao" class="btn btn-outline-rose">Ver roteiro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="memory-card h-100">
+                  <img src="images/shop-album.jpg" class="w-100" width="900" height="1100"
+                    alt="Álbum de memórias personalizado">
+                  <div class="p-4">
+                    <span class="badge rounded-pill text-bg-light border text-rose mb-3">Serviço</span>
+                    <h5>Álbum de memórias</h5>
+                    <p class="text-secondary">Você envia as fotos e mensagens, e o site organiza um álbum impresso com
+                      capa delicada e acabamento de presente.</p>
+                    <a href="#album-produto" class="btn btn-outline-rose">Ver álbum</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="plan-card h-100 p-4">
+              <h4 class="section-title">Atelier da homenagem</h4>
+              <p class="text-secondary">Uma pequena loja pensada para presentes afetivos, com itens prontos e serviços
+                personalizados para a data.</p>
+              <div class="list-group list-group-flush mb-4">
+                <div class="list-group-item px-0">
+                  <strong>Produtos prontos:</strong> opções montadas com visual delicado e entrega de presente.
+                </div>
+                <div class="list-group-item px-0">
+                  <strong>Encomendas personalizadas:</strong> álbuns e cartas montados a partir da história da família.
+                </div>
+                <div class="list-group-item px-0">
+                  <strong>Combinações sugeridas:</strong> você pode juntar carta, caixa e álbum em um mesmo presente.
+                </div>
+              </div>
+              <div class="feature-card p-3 bg-rose-subtle border-0">
+                <h6 class="mb-2 text-rose">Combinação mais pedida</h6>
+                <p class="mb-3 text-secondary">Caixa de autocuidado com carta personalizada e dedicação impressa para
+                  acompanhar a embalagem.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="#caixa-produto" class="btn btn-rose">Ver caixa</a>
+                  <a href="#mensagem" class="btn btn-outline-rose">Montar carta</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-1">
+          <div class="col-12">
+            <article id="caixa-produto" class="soft-shell overflow-hidden">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5">
+                  <img src="images/shop-box.jpg" class="w-100 h-100 object-fit-cover" width="900" height="1100"
+                    alt="Caixa de autocuidado com itens delicados">
+                </div>
+                <div class="col-lg-7 p-4 p-lg-5">
+                  <span class="badge rounded-pill bg-rose-subtle text-rose mb-3">Produto em destaque</span>
+                  <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+                    <div>
+                      <h3 class="section-title mb-1">Caixa de autocuidado</h3>
+                      <p class="text-secondary mb-0">Um presente pronto para entregar, com atmosfera suave e acabamento
+                        delicado.</p>
+                    </div>
+                    <span class="badge text-bg-light border text-rose fs-6 px-3 py-2">R$ 189,00</span>
+                  </div>
+                  <div class="list-group list-group-flush mb-4">
+                    <div class="list-group-item px-0"><strong>Composição:</strong> vela aromática, sabonete suave, chás
+                      especiais, creme para mãos e cartão impresso.</div>
+                    <div class="list-group-item px-0"><strong>Apresentação:</strong> caixa rígida em tons neutros com
+                      fita e tag personalizada.</div>
+                    <div class="list-group-item px-0"><strong>Ideal para:</strong> quem quer um presente elegante sem
+                      precisar montar tudo do zero.</div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="#mensagem" class="btn btn-rose">Adicionar carta ao presente</a>
+                    <button class="btn btn-outline-rose" type="button">Adicionar ao carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12">
+            <article id="album-produto" class="soft-shell overflow-hidden">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5 order-lg-2">
+                  <img src="images/shop-album.jpg" class="w-100 h-100 object-fit-cover" width="900" height="1100"
+                    alt="Álbum de memórias com fotos da família">
+                </div>
+                <div class="col-lg-7 order-lg-1 p-4 p-lg-5">
+                  <span class="badge rounded-pill text-bg-light border text-rose mb-3">Serviço personalizado</span>
+                  <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+                    <div>
+                      <h3 class="section-title mb-1">Álbum de memórias</h3>
+                      <p class="text-secondary mb-0">Um livro afetivo montado a partir de fotos, frases e lembranças da
+                        própria família.</p>
+                    </div>
+                    <span class="badge text-bg-light border text-rose fs-6 px-3 py-2">A partir de R$ 249,00</span>
+                  </div>
+                  <div class="list-group list-group-flush mb-4">
+                    <div class="list-group-item px-0"><strong>Etapa 1:</strong> você envia as fotos, pequenos textos e
+                      nomes das pessoas que participam da história.</div>
+                    <div class="list-group-item px-0"><strong>Etapa 2:</strong> o site organiza a narrativa visual em
+                      ordem delicada, com capa e página de abertura.</div>
+                    <div class="list-group-item px-0"><strong>Entrega:</strong> álbum impresso com acabamento para
+                      presente e espaço para dedicação final.</div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-rose" type="button">Começar encomenda</button>
+                    <a href="#momentos" class="btn btn-outline-rose">Buscar inspiração</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="programacao" class="py-4 py-lg-5">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <h2 class="section-title mb-4">Programação do dia</h2>
+            <ul class="nav nav-pills mb-3" id="programTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="manha-tab" data-bs-toggle="pill" data-bs-target="#manha"
+                  type="button" role="tab" aria-controls="manha" aria-selected="true">Manhã</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tarde-tab" data-bs-toggle="pill" data-bs-target="#tarde" type="button"
+                  role="tab" aria-controls="tarde" aria-selected="false">Tarde</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="noite-tab" data-bs-toggle="pill" data-bs-target="#noite" type="button"
+                  role="tab" aria-controls="noite" aria-selected="false">Noite</button>
+              </li>
+            </ul>
+            <div class="tab-content feature-card p-4" id="programTabsContent">
+              <div class="tab-pane fade show active" id="manha" role="tabpanel" aria-labelledby="manha-tab"
+                tabindex="0">
+                <h5>Café da manhã, flores e uma carta</h5>
+                <p class="text-secondary mb-0">Comece devagar, com louças bonitas, guardanapos claros e um texto curto
+                  escrito por cada pessoa da casa.</p>
+              </div>
+              <div class="tab-pane fade" id="tarde" role="tabpanel" aria-labelledby="tarde-tab" tabindex="0">
+                <h5>Encontro, fotos e refeição favorita</h5>
+                <p class="text-secondary mb-0">A tarde pode ter um almoço especial, uma sobremesa simples e uma rodada
+                  de lembranças divertidas.</p>
+              </div>
+              <div class="tab-pane fade" id="noite" role="tabpanel" aria-labelledby="noite-tab" tabindex="0">
+                <h5>Filme calmo e encerramento carinhoso</h5>
+                <p class="text-secondary mb-0">Finalize o dia com luz baixa, manta, playlist suave e um agradecimento
+                  espontâneo em voz alta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="feature-card p-4 h-100">
+              <h4 class="section-title mb-4">Perguntas rápidas</h4>
+              <div class="accordion accordion-flush" id="faq">
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                      E se eu tiver pouco tempo?
+                    </button>
+                  </h2>
+                  <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                    <div class="accordion-body px-0">
+                      Um café da manhã simples com uma mensagem sincera já cria uma experiência muito bonita.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                      O presente precisa ser caro?
+                    </button>
+                  </h2>
+                  <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faq">
+                    <div class="accordion-body px-0">
+                      Não. O mais forte aqui é a personalização: memória, cuidado e presença contam mais.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                      Como envolver toda a família?
+                    </button>
+                  </h2>
+                  <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faq">
+                    <div class="accordion-body px-0">
+                      Divida tarefas: quem cozinha, quem escreve, quem organiza as fotos e quem cuida da música.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mensagem" class="py-4 py-lg-5">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="feature-card p-4 h-100">
+              <h2 class="section-title">Monte a carta com prévia</h2>
+              <p class="text-secondary">O estilo altera o tom da carta e a aparência da prévia. Nesta demonstração, o
+                resultado aparece aqui ao lado, como se fosse a entrega no e-mail.</p>
+              <div class="list-group list-group-flush mb-4">
+                <div class="list-group-item px-0">
+                  <strong>Clássico e elegante:</strong> texto mais formal e visual mais sóbrio.
+                </div>
+                <div class="list-group-item px-0">
+                  <strong>Afetuoso e intimista:</strong> mensagem mais calorosa e próxima.
+                </div>
+                <div class="list-group-item px-0">
+                  <strong>Leve e alegre:</strong> linguagem mais espontânea e descontraída.
+                </div>
+              </div>
+              <div class="preview-card">
+                <div class="preview-head p-3">
+                  <div class="small text-secondary">Prévia de entrega</div>
+                  <div class="fw-semibold" id="previewEmail">Para: familia@exemplo.com</div>
+                </div>
+                <div class="p-3">
+                  <div class="small text-secondary mb-2" id="previewSubject">Assunto: Sua homenagem de Dia das Mães</div>
+                  <div id="previewPaper" class="preview-paper afetuoso p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <span class="badge rounded-pill bg-rose-subtle text-rose" id="previewStyleBadge">Afetuoso e intimista</span>
+                      <span class="small text-secondary" id="previewMoment">Entrega ideal: tarde</span>
+                    </div>
+                    <h5 class="mb-3" id="previewGreeting">Para uma mãe muito especial,</h5>
+                    <p class="mb-3 text-secondary" id="previewMessage">Hoje a homenagem aparece aqui em formato de prévia.
+                      Quando você escrever sua mensagem, este texto será atualizado automaticamente.</p>
+                    <div class="small text-secondary" id="previewExtras">Extras: flores</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="form-panel p-4 p-lg-5">
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nomeResponsavel" placeholder="Seu nome" required>
+                    <label for="nomeResponsavel">Seu nome</label>
+                    <div class="invalid-feedback">Informe quem está preparando a homenagem.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="emailContato" placeholder="nome@exemplo.com"
+                      required>
+                    <label for="emailContato">E-mail que receberá a prévia</label>
+                    <div class="invalid-feedback">Digite um e-mail válido para continuar.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="destinataria" class="form-label">Para quem é a homenagem?</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-regular fa-heart"></i></span>
+                    <input type="text" class="form-control" id="destinataria" placeholder="Nome da mãe ou figura materna"
+                      required>
+                    <div class="invalid-feedback">Conte para quem vai essa mensagem especial.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="estilo" class="form-label">Estilo da carta</label>
+                  <select class="form-select" id="estilo" required>
+                    <option selected disabled value="">Escolha um estilo</option>
+                    <option>Clássico e elegante</option>
+                    <option>Afetuoso e intimista</option>
+                    <option>Leve e alegre</option>
+                  </select>
+                  <div class="form-text">O estilo muda o tom do texto e a apresentação da prévia.</div>
+                  <div class="invalid-feedback">Escolha um estilo para a homenagem.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="momento" class="form-label">Melhor momento para entregar</label>
+                  <input type="range" class="form-range mt-2" id="momento" min="1" max="3" value="2">
+                  <div class="d-flex justify-content-between small text-secondary">
+                    <span>Manhã</span>
+                    <span>Tarde</span>
+                    <span>Noite</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Escreva aqui" id="mensagemTexto"
+                      style="height: 150px" required></textarea>
+                    <label for="mensagemTexto">Escreva uma mensagem especial</label>
+                    <div class="invalid-feedback">Escreva ao menos uma mensagem curta antes de salvar.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label d-block mb-2">Toques extras</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flores">
+                    <label class="form-check-label" for="flores">Adicionar flores</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="playlist">
+                    <label class="form-check-label" for="playlist">Sugerir playlist</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="album">
+                    <label class="form-check-label" for="album">Montar álbum</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-rose px-4" type="submit">Atualizar prévia</button>
+                  <button class="btn btn-outline-rose px-4 ms-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#previewModal">Abrir prévia ampliada</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+      <div>
+        <h5 class="mb-1 text-rose">Jardim de Afeto</h5>
+        <p class="mb-0 text-secondary">Uma página de Dia das Mães com roteiro do dia, prévia de carta
+          personalizada, presentes e mais!</p>
+        <p class="mb-0 text-secondary">
+Realizado por Gustavo Ribeiro @UDF, gustavoabreu2228@gmail.com
+        </p>
+      </div>
+      <nav aria-label="Links do rodapé" class="d-flex gap-3">
+        <a class="text-decoration-none text-rose" href="#topo">Voltar ao topo</a>
+        <a class="text-decoration-none text-rose" href="#programacao">Programação</a>
+        <a class="text-decoration-none text-rose" href="#mensagem">Carta</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-rose" id="previewModalLabel">Exemplo de entrega no e-mail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2"><strong id="modalPreviewSubject">Assunto: Sua homenagem de Dia das Mães chegou</strong></p>
+          <p class="mb-3 text-secondary">Uma visualização ampliada da carta, com o estilo e a mensagem escolhidos por
+            você.</p>
+          <div id="modalPreviewPaper" class="preview-paper afetuoso p-4">
+            <span class="badge rounded-pill bg-rose-subtle text-rose mb-3" id="modalPreviewStyle">Afetuoso e intimista</span>
+            <h5 id="modalPreviewGreeting">Para uma mãe muito especial,</h5>
+            <p class="mb-0 text-secondary" id="modalPreviewMessage">Obrigada por transformar cuidado em rotina e
+              presença em abraço. Que seu dia seja leve, bonito e cheio de carinho.</p>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-rose" data-bs-dismiss="modal">Fechar</button>
+          <a href="#mensagem" class="btn btn-rose">Editar minha carta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    const previewModalElement = document.getElementById('previewModal');
+    const previewModal = new bootstrap.Modal(previewModalElement);
+    const nomeResponsavel = document.getElementById('nomeResponsavel');
+    const emailContato = document.getElementById('emailContato');
+    const destinataria = document.getElementById('destinataria');
+    const estilo = document.getElementById('estilo');
+    const momento = document.getElementById('momento');
+    const mensagemTexto = document.getElementById('mensagemTexto');
+    const extras = document.querySelectorAll('#flores, #playlist, #album');
+    const previewEmail = document.getElementById('previewEmail');
+    const previewSubject = document.getElementById('previewSubject');
+    const previewStyleBadge = document.getElementById('previewStyleBadge');
+    const previewMoment = document.getElementById('previewMoment');
+    const previewGreeting = document.getElementById('previewGreeting');
+    const previewMessage = document.getElementById('previewMessage');
+    const previewExtras = document.getElementById('previewExtras');
+    const previewPaper = document.getElementById('previewPaper');
+    const modalPreviewSubject = document.getElementById('modalPreviewSubject');
+    const modalPreviewStyle = document.getElementById('modalPreviewStyle');
+    const modalPreviewGreeting = document.getElementById('modalPreviewGreeting');
+    const modalPreviewMessage = document.getElementById('modalPreviewMessage');
+    const modalPreviewPaper = document.getElementById('modalPreviewPaper');
+
+    function getMomentLabel(value) {
+      if (value === '1') return 'manhã';
+      if (value === '3') return 'noite';
+      return 'tarde';
+    }
+
+    function getStyleClass(value) {
+      if (value === 'Clássico e elegante') return 'elegante';
+      if (value === 'Leve e alegre') return 'alegre';
+      return 'afetuoso';
+    }
+
+    function getGreeting(value, recipient) {
+      const nome = recipient || 'uma mãe muito especial';
+      if (value === 'Clássico e elegante') return `Para ${nome}, com admiração,`;
+      if (value === 'Leve e alegre') return `Para ${nome}, com muito carinho e alegria,`;
+      return `Para ${nome},`;
+    }
+
+    function updatePreview() {
+      const styleValue = estilo.value || 'Afetuoso e intimista';
+      const messageValue = mensagemTexto.value.trim()
+        || 'Hoje a homenagem aparece aqui em formato de prévia. Quando você escrever sua mensagem, este texto será atualizado automaticamente.';
+      const recipientValue = destinataria.value.trim() || 'uma mãe muito especial';
+      const senderValue = nomeResponsavel.value.trim() || 'Sua família';
+      const emailValue = emailContato.value.trim() || 'familia@exemplo.com';
+      const extrasValue = [...extras]
+        .filter((item) => item.checked)
+        .map((item) => item.nextElementSibling.textContent.trim().toLowerCase());
+
+      previewEmail.textContent = `Para: ${emailValue}`;
+      previewSubject.textContent = `Assunto: Carta de ${senderValue} para ${recipientValue}`;
+      previewStyleBadge.textContent = styleValue;
+      previewMoment.textContent = `Entrega ideal: ${getMomentLabel(momento.value)}`;
+      previewGreeting.textContent = getGreeting(styleValue, recipientValue);
+      previewMessage.textContent = messageValue;
+      previewExtras.textContent = extrasValue.length
+        ? `Extras: ${extrasValue.join(', ')}`
+        : 'Extras: sem complementos selecionados';
+      previewPaper.className = `preview-paper ${getStyleClass(styleValue)} p-4`;
+      modalPreviewSubject.textContent = `Assunto: Carta de ${senderValue} para ${recipientValue}`;
+      modalPreviewStyle.textContent = styleValue;
+      modalPreviewGreeting.textContent = getGreeting(styleValue, recipientValue);
+      modalPreviewMessage.textContent = messageValue;
+      modalPreviewPaper.className = `preview-paper ${getStyleClass(styleValue)} p-4`;
+    }
+
+    window.addEventListener('load', updatePreview);
+    [nomeResponsavel, emailContato, destinataria, estilo, momento, mensagemTexto, ...extras]
+      .forEach((field) => field.addEventListener('input', updatePreview));
+    [estilo, ...extras].forEach((field) => field.addEventListener('change', updatePreview));
+
+    const forms = document.querySelectorAll('.needs-validation');
+    [...forms].forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+          updatePreview();
+          previewModal.show();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  </script>
+</body>
+
+</html>
